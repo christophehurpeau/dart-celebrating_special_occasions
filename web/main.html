@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular : Celebrate special occasions related to your birthday !</title>
+    <link rel="stylesheet" href="main.css">
+    
+    <script type="application/dart" src="main.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </head>
+  <body>
+      <div events-controller>
+      <ul class="unstyled">
+        <li ng-repeat="event in events.events">
+          <span>{{event.intlDate}} {{event.title}}</span>
+          <a href="javascript:;" ng-click="events.remove(event)">x</a>
+        </li>
+      </ul>
+      <form onsubmit="return false;" class="form-inline">
+        <input ng-model="events.birthDateText" type="text" size="30"
+               placeholder="1989-07-30">
+        <input ng-click="events.set()" class="btn-primary" type="submit" value="Valider">
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+name: celebrating_special_occasions
+description: Celebrating events
+dependencies:
+  angular: any
+  intl: any
+dev_dependencies:
+  unittest: any
