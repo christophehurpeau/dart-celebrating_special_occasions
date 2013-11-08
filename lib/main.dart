@@ -32,7 +32,7 @@ class EventsCtrl {
   }
   
   void set() {
-    if(birthDateText == null || birthDateText.isEmpty) birthDateText = '1989-30-07';
+    if(birthDateText == null || birthDateText.isEmpty) birthDateText = '1989-07-30';
     birthDate = DateTime.parse(birthDateText);
     birthDateText = null;
     
