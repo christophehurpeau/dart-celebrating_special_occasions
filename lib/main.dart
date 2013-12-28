@@ -4,7 +4,7 @@ import 'dart:convert' show JSON;
 import 'package:intl/intl.dart';
 //import 'package:intl/intl_browser.dart';
 
-class Event{
+class Event {
   final DateTime date;
   final String title;
   
@@ -24,7 +24,7 @@ class EventsCtrl {
     initEvents();
   }
   
-  DateTime initEvents(){
+  DateTime initEvents() {
     DateTime now = new DateTime.now();
     events = [];
     addEvent(new DateTime(now.year+1, 1, 1), 'New Year');
@@ -32,7 +32,9 @@ class EventsCtrl {
   }
   
   void set() {
-    if(birthDateText == null || birthDateText.isEmpty) birthDateText = '1989-07-30';
+    if(birthDateText == null || birthDateText.isEmpty) {
+      birthDateText = '1989-07-30';
+    }
     birthDate = DateTime.parse(birthDateText);
     birthDateText = null;
     
@@ -53,11 +55,11 @@ class EventsCtrl {
     events.sort((Event a, Event b) => a.date.millisecondsSinceEpoch - b.date.millisecondsSinceEpoch);
   }
   
-  void addEvent(DateTime date, String title){
+  void addEvent(DateTime date, String title) {
     events.add(new Event(date, title));
   }
   
-  void remove(Event event){
+  void remove(Event event) {
     events.remove(event);
   }
 }
